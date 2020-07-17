@@ -1,6 +1,4 @@
 
-//Subscriptions
-
 const redux = require('redux');
 
 const createStore = redux.createStore;
@@ -29,6 +27,12 @@ const rootReducer = (state=initialState,action) =>{
 //Store
 const store = createStore(rootReducer);
 console.log(store.getState());
+
+//Subscriptions
+
+store.subscribe(()=>{
+    console.log('[Subscriptions]',store.getState());
+});
 //Dispatching Store
 store.dispatch({type:'INC_COUNTER'});
 store.dispatch({type:'ADD_COUNTER',value:10});
