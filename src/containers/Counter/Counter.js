@@ -41,7 +41,10 @@ class Counter extends Component {
 
 const mapDispatchToProps = dispatch =>{
     return{
-        onIncrementCounter:()=>dispatch({type:'INCREMENT'})
+        onIncrementCounter:()=>dispatch({type:'INCREMENT'}),
+        onDecrementCounter:()=>dispatch({type:'DECREMENT'}),
+        onAddCounter:()=>dispatch({type:'ADD'}),
+        onSubtractCounter:()=>dispatch({type:'SUBTRACT'})
     };
 };
 const mapStateToProps = state =>{
